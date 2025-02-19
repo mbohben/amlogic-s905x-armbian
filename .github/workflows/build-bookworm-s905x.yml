@@ -23,6 +23,7 @@ on:
         type: choice
         options:
           - s905x3-x88-pro-x3_s912-m8s-pro_s905x-t95_s912-t95z-plus_s905l3-unt400g1_s905lb-r3300l
+          - s905x
           - s905x-b860h
           - s905x-nexbox-a95x
           - s905x-t95
