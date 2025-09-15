@@ -225,6 +225,7 @@ on:
           - flippy
           - dev
           - beta
+          - canbeta
       armbian_fstype:
         description: "Select armbian rootfs type."
         required: false
@@ -249,6 +250,7 @@ on:
         options:
           - ophub
           - angel
+          - bendot
 
 env:
   TZ: Etc/UTC
