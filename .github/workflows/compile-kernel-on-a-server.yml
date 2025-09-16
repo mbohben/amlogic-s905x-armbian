@@ -86,7 +86,7 @@ on:
         type: choice
         options:
           - -ophub
-          - -yourname
+          - -bendot
 
 env:
   TZ: Etc/UTC
