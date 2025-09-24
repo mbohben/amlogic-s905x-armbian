@@ -216,6 +216,7 @@ on:
         options:
           - ophub/kernel
           - mbohben/ophubkernel
+          - mbohben/amlogic-s905x-armbian
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
