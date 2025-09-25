@@ -139,12 +139,19 @@ jobs:
       - name: Create a mapped directory
         id: mapped
         working-directory: /builder
+        shell: bash
         run: |
-          df -hT ${PWD}
+          set -euo pipefail
+          df -hT "${PWD}"
           mkdir -p /builder/{kernel,output}
-          ln -sf /builder/kernel /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/compile-kernel/kernel
-          ln -sf /builder/output /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/compile-kernel/output
-          echo "status=success" >> ${GITHUB_OUTPUT}
+          # Point to your fork's action path, not the original.
+          P="/home/runner/work/_actions/mbohben/amlogic-s905x-armbian/main/compile-kernel"
+          mkdir -p "$P"
+          ln -sfn /builder/kernel  "$P/kernel"
+          ln -sfn /builder/output  "$P/output"
+          # Optional: quick sanity check
+          ls -la "$P"
+          echo "status=success" >> "${GITHUB_OUTPUT}"
 
       - name: Compile the kernel [ ${{ inputs.kernel_version }} ]
         uses: mbohben/amlogic-s905x-armbian@main
