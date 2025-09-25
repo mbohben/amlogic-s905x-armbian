@@ -4,7 +4,7 @@
 # Copyright (C) 2021 https://github.com/ophub/amlogic-s9xxx-armbian
 #==========================================================================
 
-name: Compile the kernel on a server
+name: compile-v6-kernel
 
 on:
   repository_dispatch:
